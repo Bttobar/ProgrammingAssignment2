@@ -27,8 +27,8 @@ makeCacheMatrix <- function(x = matrix()) {
         get <- function() x
         setinv <- function(inverse){
                 inv <<- inverse 
-                ## If we don't use the double assignment operator, the inverse value returns to NULL,so there is no cache inverse in that case.                
-                
+# If we don't use the double assignment operator, the inverse value returns to NULL (inv <- NULL),so there is no cache inverse in that case.                
+# The double assignement safe the value in a upper environment, in this case "inv <- NULL" updates.                
         }
         getinv <- function() inv 
         list(set = set, get = get,
